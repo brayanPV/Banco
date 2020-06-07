@@ -13,7 +13,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import DTO.Cuenta;
 import DTO.Movimiento;
-import DTO.Tipomovimiento;
+import DTO.TipoMovimiento;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -43,7 +43,7 @@ public class MovimientoJpaController implements Serializable {
                 nroCuenta = em.getReference(nroCuenta.getClass(), nroCuenta.getNroCuenta());
                 movimiento.setNroCuenta(nroCuenta);
             }
-            Tipomovimiento idTipoMovimiento = movimiento.getIdTipoMovimiento();
+            TipoMovimiento idTipoMovimiento = movimiento.getIdTipoMovimiento();
             if (idTipoMovimiento != null) {
                 idTipoMovimiento = em.getReference(idTipoMovimiento.getClass(), idTipoMovimiento.getId());
                 movimiento.setIdTipoMovimiento(idTipoMovimiento);
@@ -73,8 +73,8 @@ public class MovimientoJpaController implements Serializable {
             Movimiento persistentMovimiento = em.find(Movimiento.class, movimiento.getId());
             Cuenta nroCuentaOld = persistentMovimiento.getNroCuenta();
             Cuenta nroCuentaNew = movimiento.getNroCuenta();
-            Tipomovimiento idTipoMovimientoOld = persistentMovimiento.getIdTipoMovimiento();
-            Tipomovimiento idTipoMovimientoNew = movimiento.getIdTipoMovimiento();
+            TipoMovimiento idTipoMovimientoOld = persistentMovimiento.getIdTipoMovimiento();
+            TipoMovimiento idTipoMovimientoNew = movimiento.getIdTipoMovimiento();
             if (nroCuentaNew != null) {
                 nroCuentaNew = em.getReference(nroCuentaNew.getClass(), nroCuentaNew.getNroCuenta());
                 movimiento.setNroCuenta(nroCuentaNew);
@@ -134,7 +134,7 @@ public class MovimientoJpaController implements Serializable {
                 nroCuenta.getMovimientoList().remove(movimiento);
                 nroCuenta = em.merge(nroCuenta);
             }
-            Tipomovimiento idTipoMovimiento = movimiento.getIdTipoMovimiento();
+            TipoMovimiento idTipoMovimiento = movimiento.getIdTipoMovimiento();
             if (idTipoMovimiento != null) {
                 idTipoMovimiento.getMovimientoList().remove(movimiento);
                 idTipoMovimiento = em.merge(idTipoMovimiento);

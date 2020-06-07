@@ -13,7 +13,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import DTO.Movimiento;
-import DTO.Tipomovimiento;
+import DTO.TipoMovimiento;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -23,9 +23,9 @@ import javax.persistence.EntityManagerFactory;
  *
  * @author stive
  */
-public class TipomovimientoJpaController implements Serializable {
+public class TipoMovimientoJpaController implements Serializable {
 
-    public TipomovimientoJpaController(EntityManagerFactory emf) {
+    public TipoMovimientoJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
     private EntityManagerFactory emf = null;
@@ -34,7 +34,7 @@ public class TipomovimientoJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(Tipomovimiento tipomovimiento) {
+    public void create(TipoMovimiento tipomovimiento) {
         if (tipomovimiento.getMovimientoList() == null) {
             tipomovimiento.setMovimientoList(new ArrayList<Movimiento>());
         }
@@ -50,7 +50,7 @@ public class TipomovimientoJpaController implements Serializable {
             tipomovimiento.setMovimientoList(attachedMovimientoList);
             em.persist(tipomovimiento);
             for (Movimiento movimientoListMovimiento : tipomovimiento.getMovimientoList()) {
-                Tipomovimiento oldIdTipoMovimientoOfMovimientoListMovimiento = movimientoListMovimiento.getIdTipoMovimiento();
+                TipoMovimiento oldIdTipoMovimientoOfMovimientoListMovimiento = movimientoListMovimiento.getIdTipoMovimiento();
                 movimientoListMovimiento.setIdTipoMovimiento(tipomovimiento);
                 movimientoListMovimiento = em.merge(movimientoListMovimiento);
                 if (oldIdTipoMovimientoOfMovimientoListMovimiento != null) {
@@ -66,12 +66,12 @@ public class TipomovimientoJpaController implements Serializable {
         }
     }
 
-    public void edit(Tipomovimiento tipomovimiento) throws IllegalOrphanException, NonexistentEntityException, Exception {
+    public void edit(TipoMovimiento tipomovimiento) throws IllegalOrphanException, NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Tipomovimiento persistentTipomovimiento = em.find(Tipomovimiento.class, tipomovimiento.getId());
+            TipoMovimiento persistentTipomovimiento = em.find(TipoMovimiento.class, tipomovimiento.getId());
             List<Movimiento> movimientoListOld = persistentTipomovimiento.getMovimientoList();
             List<Movimiento> movimientoListNew = tipomovimiento.getMovimientoList();
             List<String> illegalOrphanMessages = null;
@@ -96,7 +96,7 @@ public class TipomovimientoJpaController implements Serializable {
             tipomovimiento = em.merge(tipomovimiento);
             for (Movimiento movimientoListNewMovimiento : movimientoListNew) {
                 if (!movimientoListOld.contains(movimientoListNewMovimiento)) {
-                    Tipomovimiento oldIdTipoMovimientoOfMovimientoListNewMovimiento = movimientoListNewMovimiento.getIdTipoMovimiento();
+                    TipoMovimiento oldIdTipoMovimientoOfMovimientoListNewMovimiento = movimientoListNewMovimiento.getIdTipoMovimiento();
                     movimientoListNewMovimiento.setIdTipoMovimiento(tipomovimiento);
                     movimientoListNewMovimiento = em.merge(movimientoListNewMovimiento);
                     if (oldIdTipoMovimientoOfMovimientoListNewMovimiento != null && !oldIdTipoMovimientoOfMovimientoListNewMovimiento.equals(tipomovimiento)) {
@@ -110,7 +110,7 @@ public class TipomovimientoJpaController implements Serializable {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
                 Integer id = tipomovimiento.getId();
-                if (findTipomovimiento(id) == null) {
+                if (findTipoMovimiento(id) == null) {
                     throw new NonexistentEntityException("The tipomovimiento with id " + id + " no longer exists.");
                 }
             }
@@ -127,9 +127,9 @@ public class TipomovimientoJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Tipomovimiento tipomovimiento;
+            TipoMovimiento tipomovimiento;
             try {
-                tipomovimiento = em.getReference(Tipomovimiento.class, id);
+                tipomovimiento = em.getReference(TipoMovimiento.class, id);
                 tipomovimiento.getId();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The tipomovimiento with id " + id + " no longer exists.", enfe);
@@ -154,19 +154,19 @@ public class TipomovimientoJpaController implements Serializable {
         }
     }
 
-    public List<Tipomovimiento> findTipomovimientoEntities() {
-        return findTipomovimientoEntities(true, -1, -1);
+    public List<TipoMovimiento> findTipoMovimientoEntities() {
+        return findTipoMovimientoEntities(true, -1, -1);
     }
 
-    public List<Tipomovimiento> findTipomovimientoEntities(int maxResults, int firstResult) {
-        return findTipomovimientoEntities(false, maxResults, firstResult);
+    public List<TipoMovimiento> findTipoMovimientoEntities(int maxResults, int firstResult) {
+        return findTipoMovimientoEntities(false, maxResults, firstResult);
     }
 
-    private List<Tipomovimiento> findTipomovimientoEntities(boolean all, int maxResults, int firstResult) {
+    private List<TipoMovimiento> findTipoMovimientoEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(Tipomovimiento.class));
+            cq.select(cq.from(TipoMovimiento.class));
             Query q = em.createQuery(cq);
             if (!all) {
                 q.setMaxResults(maxResults);
@@ -178,10 +178,10 @@ public class TipomovimientoJpaController implements Serializable {
         }
     }
 
-    public Tipomovimiento findTipomovimiento(Integer id) {
+    public TipoMovimiento findTipoMovimiento(Integer id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(Tipomovimiento.class, id);
+            return em.find(TipoMovimiento.class, id);
         } finally {
             em.close();
         }
@@ -191,7 +191,7 @@ public class TipomovimientoJpaController implements Serializable {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            Root<Tipomovimiento> rt = cq.from(Tipomovimiento.class);
+            Root<TipoMovimiento> rt = cq.from(TipoMovimiento.class);
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();

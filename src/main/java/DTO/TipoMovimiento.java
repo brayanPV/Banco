@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Tipomovimiento.findAll", query = "SELECT t FROM Tipomovimiento t")
     , @NamedQuery(name = "Tipomovimiento.findById", query = "SELECT t FROM Tipomovimiento t WHERE t.id = :id")
     , @NamedQuery(name = "Tipomovimiento.findByDescripcion", query = "SELECT t FROM Tipomovimiento t WHERE t.descripcion = :descripcion")})
-public class Tipomovimiento implements Serializable {
+public class TipoMovimiento implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -50,14 +50,14 @@ public class Tipomovimiento implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idTipoMovimiento")
     private List<Movimiento> movimientoList;
 
-    public Tipomovimiento() {
+    public TipoMovimiento() {
     }
 
-    public Tipomovimiento(Integer id) {
+    public TipoMovimiento(Integer id) {
         this.id = id;
     }
 
-    public Tipomovimiento(Integer id, String descripcion) {
+    public TipoMovimiento(Integer id, String descripcion) {
         this.id = id;
         this.descripcion = descripcion;
     }
@@ -97,10 +97,10 @@ public class Tipomovimiento implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Tipomovimiento)) {
+        if (!(object instanceof TipoMovimiento)) {
             return false;
         }
-        Tipomovimiento other = (Tipomovimiento) object;
+        TipoMovimiento other = (TipoMovimiento) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

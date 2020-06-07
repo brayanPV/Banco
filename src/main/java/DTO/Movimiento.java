@@ -57,7 +57,7 @@ public class Movimiento implements Serializable {
     private Cuenta nroCuenta;
     @JoinColumn(name = "idTipoMovimiento", referencedColumnName = "id")
     @ManyToOne(optional = false)
-    private Tipomovimiento idTipoMovimiento;
+    private TipoMovimiento idTipoMovimiento;
 
     public Movimiento() {
     }
@@ -104,11 +104,11 @@ public class Movimiento implements Serializable {
         this.nroCuenta = nroCuenta;
     }
 
-    public Tipomovimiento getIdTipoMovimiento() {
+    public TipoMovimiento getIdTipoMovimiento() {
         return idTipoMovimiento;
     }
 
-    public void setIdTipoMovimiento(Tipomovimiento idTipoMovimiento) {
+    public void setIdTipoMovimiento(TipoMovimiento idTipoMovimiento) {
         this.idTipoMovimiento = idTipoMovimiento;
     }
 
