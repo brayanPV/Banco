@@ -29,7 +29,7 @@
 
 	<div class="container">
 		<nav class="navbar sticky-top navbar-light bg-light">
-			<a class="navbar-brand" href="index.html">Inicio</a>
+                    <a class="navbar-brand" href="index.jsp">Inicio</a>
 			<a class="navbar-brand" href="./JSP/Cliente/registrarcliente.jsp">Registrar Cliente</a>
 			<a class="navbar-brand" href="./redir.do?url=./JSP/Cuenta/registrarcuenta.jsp">Registrar Cuenta</a>
 			<a class="navbar-brand" href="./redir.do?url=./JSP/Movimiento/registrarmovimiento.jsp">Registrar Movimiento</a>

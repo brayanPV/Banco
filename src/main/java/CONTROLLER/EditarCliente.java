@@ -5,6 +5,8 @@
  */
 package CONTROLLER;
 
+import DTO.Cliente;
+import NEGOCIO.Banco;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -32,17 +34,20 @@ public class EditarCliente extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        try {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet EditarCliente</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet EditarCliente at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            int cedula = Integer.parseInt(request.getParameter("cedula"));
+            Banco banquito=new Banco();
+            Cliente cliente = banquito.findCliente(cedula);
+            
+            
+            if (request.getParameter("cedula") !=null) {
+                request.getSession().setAttribute("cliente", cliente);
+                request.getRequestDispatcher("./JSP/Cliente/editarCliente.jsp").forward(request, response);
+            }
+            
+        } catch(Exception e){
+            System.err.println(e.getMessage());
         }
     }
 

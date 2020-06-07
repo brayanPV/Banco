@@ -1,6 +1,6 @@
 <%-- 
     Document   : registroexitoso
-    Created on : 30/11/2019, 10:31:18 AM
+    Created on : 30/11/2019, 03:14:56 PM
     Author     : stive
 --%>
 
@@ -8,10 +8,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-         <jsp:include page="../../templates/meta.jsp"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Felicidades OwO</h1>
+        <h1>Re bn papi siga así</h1>
     </body>
 </html>
