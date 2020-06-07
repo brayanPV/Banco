@@ -6,16 +6,14 @@
 
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="DTO.Cliente"%>
-<%@page import="NEGOCIO.Banco"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="">
-    <% Banco banco = new Banco();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-    %> 
 
     <head>
-         <jsp:include page="../../templates/meta.jsp"/>
+        <jsp:include page="../../templates/meta.jsp"/>
         <title></title>
     </head>
 
@@ -57,20 +55,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <jsp:useBean id="ClienteDAO" class="DAO.ClienteJpaController" scope="request"></jsp:useBean>
 
-                                    <% for (Cliente clientes : banco.getClientes()) {%>
-                                    <tr>
-                                        <td> <%=clientes.getCedula()%> </td>
-                                        <td> <%=clientes.getNombre()%></td>
-                                        <td><%=format.format(clientes.getFechanacimiento())%></td>
-                                        <td><%=clientes.getDircorrespondencia()%></td>
-                                        <td><%=clientes.getTelefono()%></td>
-                                        <td><%=clientes.getEmail()%></td>
-                                        <td><a href="EditarCliente?cedula=<%=clientes.getCedula()%>">Editar</a></td>
-                                    </tr>
-                                    <% }%>
-
-
+                                    <c:forEach var="cliente" items="${ClienteDAO.findClienteEntities()}">
+                                        <tr>
+                                            <td><c:out value="${cliente.getCedula()}"/></td>  
+                                            <td><c:out value="${cliente.getNombre()}"/></td> 
+                                            <td><c:out value="${cliente.getSemestre()}"/></td> 
+                                            <td><c:out value="${cliente.getDircorrespondencia()}"/></td> 
+                                            <td><c:out value="${cliente.getTelefono()}"/></td> 
+                                            <td><c:out value="${cliente.getEmail()}"/></td> 
+                                            <td><a href="EditarCliente?cedula=${cliente.getCedula()}">Editar</a></td>
+                                        </tr>
+                                    </c:forEach>
                                 </tbody>
                             </table>
                         </div>
@@ -78,12 +75,7 @@
                 </div>
 
             </div>
-            <footer class="text-center">
-                <p>
-                    Copyright © AÑO Autor: | Cod: | Correo:
-                    Desarrollo De Aplicaciones Web - Ing.Sistemas - UFPS
-                </p>
-            </footer>
+            
         </div>
 
 
