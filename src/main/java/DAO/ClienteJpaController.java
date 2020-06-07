@@ -29,6 +29,9 @@ public class ClienteJpaController implements Serializable {
     public ClienteJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
+    public ClienteJpaController(){
+        this.emf = Conexion.getEm();
+    }
     private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
