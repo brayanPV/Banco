@@ -5,6 +5,7 @@
  */
 package CONTROLLER;
 
+import NEGOCIO.Banco;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -32,17 +33,22 @@ public class ActualizarCliente extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ActualizarCliente</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ActualizarCliente at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        try  {            
+            String nombre = request.getParameter("nombre");
+            String dir = request.getParameter("direccion");
+            String email = request.getParameter("email");
+            String fecha = request.getParameter("fecha");
+            Integer cedula = Integer.parseInt((request.getParameter("cedula")));
+            int telefono = Integer.parseInt(request.getParameter("telefono"));
+            Banco banquito = new Banco();
+            if (banquito.UpdateCliente(cedula, nombre, fecha, dir, telefono, email)) {
+                request.getRequestDispatcher("./JSP/Cliente/verClientes.jsp").forward(request, response);
+            }else{
+                request.getRequestDispatcher("./JSP/Error/error.jsp").forward(request, response);
+            }
+           
+        } catch(Exception e){
+            System.err.println(e);
         }
     }
 

@@ -5,6 +5,7 @@
  */
 package CONTROLLER;
 
+import NEGOCIO.Banco;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -32,17 +33,58 @@ public class Movimiento extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Movimiento</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Movimiento at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        try {
+            int tipo = Integer.valueOf(request.getParameter("tipo"));
+            int cta = Integer.valueOf(request.getParameter("cuentaOrigen"));
+            int valor = Integer.valueOf(request.getParameter("valor"));
+            String fecha = request.getParameter("fecha");
+
+            Banco banquito = new Banco();
+
+            if (request.getSession().getAttribute("banquito") != null) {
+                banquito = (Banco) (request.getSession().getAttribute("banquito"));
+            }
+
+            if (tipo == 1) {
+                if (banquito.realizarConsignacion(fecha, valor, cta, tipo)) {
+                    request.getSession().setAttribute("banquito", banquito);
+                    request.getRequestDispatcher("./index.jsp").forward(request, response);
+                } else {
+                    System.err.println("falso");
+                    request.getSession().setAttribute("error", "Aca hay error pai");
+                    request.getRequestDispatcher("./JSP/Error/errormovimiento.jsp").forward(request, response);
+                }
+            } else if (tipo == 2) {
+                if (banquito.realizarRetiro(fecha, valor, cta, tipo)) {
+                    request.getSession().setAttribute("banquito", banquito);
+                    request.getRequestDispatcher("./index.jsp").forward(request, response);
+                } else {
+                    System.err.println("falso");
+                    request.getSession().setAttribute("error", "Aca hay error pai");
+                    request.getRequestDispatcher("./JSP/Error/errormovimiento.jsp").forward(request, response);
+                }
+            } else if (tipo == 3) {
+                int retiro = 2;
+                int consignacion = 1;
+                int ctaDestino = Integer.parseInt(request.getParameter("cuentaDestino"));
+                if (banquito.realizarTransferencia(fecha, valor, cta, ctaDestino, retiro, consignacion)) {
+                    request.getSession().setAttribute("banquito", banquito);
+                    request.getRequestDispatcher("./index.jsp").forward(request, response);
+                } else {
+                    System.err.println("falso");
+                    request.getSession().setAttribute("error", "Aca hay error pai");
+                    request.getRequestDispatcher("./JSP/Error/errormovimiento.jsp").forward(request, response);
+                }
+            } else {
+                System.err.println("falso");
+                request.getSession().setAttribute("error", "papi no ha seleccionado movimiento");
+                request.getRequestDispatcher("./JSP/Error/errormovimiento.jsp").forward(request, response);
+            }
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            System.out.println("el error es: " + e.getMessage());
+            request.getSession().setAttribute("error", e.getMessage());
+            request.getRequestDispatcher("./JSP/Error/errorCta.jsp").forward(request, response);
         }
     }
 
