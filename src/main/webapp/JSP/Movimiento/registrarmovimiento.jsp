@@ -39,7 +39,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title">Registrar Movimiento</div>
-                            <form name="operadcion" method="post" action="movimiento.do">
+                            <form name="operadcion" method="post" action="Movimiento">
                                 <div class="form-group">
                                     <label for="">Seleccionar Operacion</label>
                                     <select name="tipo" required id="dropdown" class="form-control">

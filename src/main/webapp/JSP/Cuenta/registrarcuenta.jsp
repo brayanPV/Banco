@@ -42,7 +42,7 @@
 				<div class="card">
 					<div class="card-body">
 						<div class="card-title">Registrar Cuenta</div>
-						<form action="registrarCuenta.do">
+						<form action="RegistrarCuenta">
 							<div class="form-group">
 								<label for="">Numero de cuenta</label>
 								<input type="number" class="form-control" min=0 max="9999999999" placeholder="Ingrese numero de cuenta" name="nrocuenta">
