@@ -15,7 +15,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
         <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
         <script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script>
@@ -34,12 +34,13 @@
 
         <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
+        <jsp:include page="../../templates/meta.jsp"/>
+        <title>Ver Cuentas</title>
     </head>
 
     <body>
         <% Banco banco = new Banco();
-    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");%>
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");%>
         <header>
             <div class="container">
                 <div class="row">
@@ -55,7 +56,7 @@
         </header>
 
         <div class="container">
-           <jsp:include page="../../templates/navInicio.jsp"/>
+            <jsp:include page="../../templates/navInicio.jsp"/>
             <hr>
             <div class="row">
                 <div class="col-lg-12">
@@ -100,13 +101,10 @@
                 </div>
 
             </div>
-            <footer class="text-center">
-                <p>
-                    Copyright © AÑO Autor: | Cod: | Correo:
-                    Desarrollo De Aplicaciones Web - Ing.Sistemas - UFPS
-                </p>
-            </footer>
+
         </div>
+
+
 
 
 
@@ -152,6 +150,23 @@
             });
 
         </script>
+        <footer class="page-footer font-small mdb-color lighten-3 mt-4">
+
+            <!-- Footer Elements -->
+
+            <!-- Footer Elements -->
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">
+                <a href="https://github.com/brayanPV/"> Brayan Stiven Palomino - 1151370</a><br>
+                <a href="https://github.com/kose25/"> Carlos Jose Pablos - 1151383</a><br>
+                <a href="#"> Juan Jose - 1151370</a><br>
+                © 2020 Copyright
+            </div>
+
+        </footer>
+
+
     </body>
 
 </html>

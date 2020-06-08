@@ -10,7 +10,7 @@
 
     <head>
         <jsp:include page="../../templates/meta.jsp"/>
-        <title></title>
+        <title>Extracto Bancario</title>
     </head>
 
     <body>
@@ -57,6 +57,7 @@
                 </div>
 
             </div>
+        </div>
             <jsp:include page="../../templates/footer.jsp"/> 
     </body>
 
