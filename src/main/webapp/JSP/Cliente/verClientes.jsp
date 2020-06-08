@@ -14,7 +14,7 @@
 
     <head>
         <jsp:include page="../../templates/meta.jsp"/>
-        <title></title>
+        <title>Ver Clientes</title>
     </head>
 
     <body>
@@ -81,6 +81,7 @@
 
 
         <jsp:include page="../../templates/footer.jsp"/> 
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
         <script>
             $(document).ready(function () {
                 $('#table_id').DataTable();

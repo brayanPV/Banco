@@ -13,7 +13,7 @@
 
 <head>
     <jsp:include page="../../templates/meta.jsp"/>
-	<title></title>
+	<title>Editar Cliente</title>
 </head>
 
 <body>

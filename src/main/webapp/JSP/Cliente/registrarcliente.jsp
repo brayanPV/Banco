@@ -11,7 +11,7 @@
 
     <head>
          <jsp:include page="../../templates/meta.jsp"/>
-        <title></title>
+        <title>Registrar Cliente</title>
     </head>
 
     <body>
