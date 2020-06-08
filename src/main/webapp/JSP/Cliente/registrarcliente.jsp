@@ -72,12 +72,7 @@
                 </div>
 
             </div>
-            <footer class="text-center">
-                <p>
-                    Copyright © AÑO Autor: | Cod: | Correo:
-                    Desarrollo De Aplicaciones Web - Ing.Sistemas - UFPS
-                </p>
-            </footer>
+            
         </div>
 
 
