@@ -31,11 +31,11 @@
 		<nav class="navbar sticky-top navbar-light bg-light">
                     <a class="navbar-brand" href="index.jsp">Inicio</a>
 			<a class="navbar-brand" href="./JSP/Cliente/registrarcliente.jsp">Registrar Cliente</a>
-			<a class="navbar-brand" href="./redir.do?url=./JSP/Cuenta/registrarcuenta.jsp">Registrar Cuenta</a>
-			<a class="navbar-brand" href="./redir.do?url=./JSP/Movimiento/registrarmovimiento.jsp">Registrar Movimiento</a>
-			<a class="navbar-brand" href="./redir.do?url=./JSP/Cliente/verClientes.jsp">Ver Clientes</a>
-			<a class="navbar-brand" href="./redir.do?url=./JSP/Cuenta/verCuentas.jsp">Ver Cuentas</a>
-			<a class="navbar-brand" href="./redir.do?url=./JSP/Cliente/extractobancario.jsp">Ver Extracto</a>
+			<a class="navbar-brand" href="./Redir?url=./JSP/Cuenta/registrarcuenta.jsp">Registrar Cuenta</a>
+			<a class="navbar-brand" href="./Redir?url=./JSP/Movimiento/registrarmovimiento.jsp">Registrar Movimiento</a>
+			<a class="navbar-brand" href="./Redir?url=./JSP/Cliente/verClientes.jsp">Ver Clientes</a>
+			<a class="navbar-brand" href="./Redir?url=./JSP/Cuenta/verCuentas.jsp">Ver Cuentas</a>
+			<a class="navbar-brand" href="./Redir?url=./JSP/Cliente/extractobancario.jsp">Ver Extracto</a>
 		</nav>
 		<hr>
 		<div class="row">

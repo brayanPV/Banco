@@ -30,7 +30,10 @@
         </header>
 
         <div class="container">
-            <jsp:include page="../../templates/navInicio.jsp"/>
+            <nav class="navbar sticky-top navbar-light bg-light">
+                <a class="navbar-brand" href="../../index.jsp">Inicio</a>
+
+</nav>
             <hr>
             <div class="row justify-content-center">
                 <div class="col-lg-5">
