@@ -8,29 +8,20 @@
 <!DOCTYPE html>
 
 <!-- Footer -->
-<footer class="page-footer font-small mdb-color lighten-3 pt-4">
+<footer class="page-footer font-small mdb-color lighten-3 mt-4">
 
     <!-- Footer Elements -->
-    
+
     <!-- Footer Elements -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a href="https://mdbootstrap.com/"> Brayan Stiven Palomino - 1151370</a>
+    <div class="footer-copyright text-center py-3">
+        <a href="https://github.com/brayanPV/"> Brayan Stiven Palomino - 1151370</a><br>
+        <a href="https://github.com/kose25/"> Carlos Jose Pablos - 1151383</a><br>
+        <a href="#"> Juan Jose - 1151370</a><br>
+        © 2020 Copyright
     </div>
-    <!-- Copyright -->
     
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a href="https://mdbootstrap.com/"> Brayan Stiven Palomino - 1151370</a>
-    </div>
-    <!-- Copyright -->
-    
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a href="https://mdbootstrap.com/"> Brayan Stiven Palomino - 1151370</a>
-    </div>
-    <!-- Copyright -->
 </footer>
 <!-- Footer -->
 

@@ -17,7 +17,7 @@
         %>
         <h1 class="register-title">Hubo un error: <%=error%></h1>
         <p>
-            <a href="./index.html">Regresar a Inicio</a>
+            <a href="./index.jsp">Regresar a Inicio</a>
         </p>
     </body>
 </html>

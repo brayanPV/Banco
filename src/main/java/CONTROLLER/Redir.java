@@ -34,14 +34,14 @@ public class Redir extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
        try {
-            Banco banco = new Banco();
+            //Banco banco = new Banco();
             
             String url = request.getParameter("url");
             request.getRequestDispatcher(url).forward(request, response);
         } catch (Exception e) {
             System.err.println(e.getMessage());
             request.getSession().setAttribute("error", e.getMessage());
-            request.getRequestDispatcher("./JSP/error/er"
+            request.getRequestDispatcher("./JSP/Error/er"
                     + ""
                     + "rorbanco.jsp").forward(request, response);
         }
