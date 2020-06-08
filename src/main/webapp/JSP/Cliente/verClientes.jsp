@@ -4,8 +4,8 @@
     Author     : Carlos Jose
 --%>
 
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="DTO.Cliente"%>
+
+<%@ page import="DTO.Cliente"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -53,13 +53,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <jsp:useBean id="ClienteDAO" class="DAO.ClienteJpaController" scope="request"></jsp:useBean>
-
-                                    <c:forEach var="cliente" items="${ClienteDAO.findClienteEntities()}">
+                                    <jsp:useBean id="cDAO" class="DAO.ClienteJpaController" scope="request"></jsp:useBean>
+                                    
+                                    
+                                    <c:forEach var="cliente" items="${cDAO.findClienteEntities()}">
                                         <tr>
                                             <td><c:out value="${cliente.getCedula()}"/></td>  
                                             <td><c:out value="${cliente.getNombre()}"/></td> 
-                                            <td><c:out value="${cliente.getSemestre()}"/></td> 
+                                            <td><c:out value="${cliente.getFechanacimiento()}"/></td> 
                                             <td><c:out value="${cliente.getDircorrespondencia()}"/></td> 
                                             <td><c:out value="${cliente.getTelefono()}"/></td> 
                                             <td><c:out value="${cliente.getEmail()}"/></td> 
@@ -73,7 +74,7 @@
                 </div>
 
             </div>
-            
+
         </div>
 
 

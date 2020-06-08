@@ -40,7 +40,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title">Registrar Cliente</div>
-                            <form action="../../registrarCliente.do" name="registrar">
+                            <form action="../../RegistrarCliente" name="registrar">
                                 <div class="form-group">
                                     <label for="">Cedula</label>
                                     <input type="number" class="form-control" min=0 max="9999999999" placeholder="Ingrese Cedula" name="cedula" required>
