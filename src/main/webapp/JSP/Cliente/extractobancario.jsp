@@ -36,7 +36,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title">Ver Extracto</div>
-                            <form action="extracto.do">
+                            <form action="Extracto">
                                 <div class="form-group">
                                     <label for="">Cedula</label>
                                     <input type="number" class="form-control" min=0 max="9999999999" placeholder="Ingrese Cedula" Required name="cedula">

@@ -21,7 +21,7 @@
         <a href="#"> Juan Jose - 1151370</a><br>
         © 2020 Copyright
     </div>
-    
+
 </footer>
 <!-- Footer -->
 
@@ -34,4 +34,4 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
-<script type="text/javascript">
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>

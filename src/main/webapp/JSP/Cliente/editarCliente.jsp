@@ -42,7 +42,7 @@
 				<div class="card">
 					<div class="card-body">
 						<div class="card-title">Actualizar Cliente</div>
-						<form action="actualizarCliente.do" name="registrar">
+						<form action="actualizarCliente" name="registrar">
 							<div class="form-group">
 								<label for="">Cedula</label>
 								<input type="number" class="form-control" min=0 max="9999999999" placeholder="Ingrese Cedula" name="cedula" readonly value="<%= clientesito.getCedula()%>">
