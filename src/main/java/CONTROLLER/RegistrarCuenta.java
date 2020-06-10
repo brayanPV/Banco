@@ -47,7 +47,7 @@ public class RegistrarCuenta extends HttpServlet {
             
             if (banquito.insertarCuenta(nroCuenta, cedula, t)) {
                 request.getSession().setAttribute("banquito", banquito);
-                request.getRequestDispatcher("./index.html").forward(request, response);
+                request.getRequestDispatcher("./index.jsp").forward(request, response);
             }
             else {
                 System.err.println("falso");

@@ -54,9 +54,9 @@
                 </div>
             </div>
         </header>
-
+        <jsp:include page="../../templates/navInicio.jsp"/>
         <div class="container">
-            <jsp:include page="../../templates/navInicio.jsp"/>
+
             <hr>
             <div class="row">
                 <div class="col-lg-12">
@@ -160,7 +160,7 @@
             <div class="footer-copyright text-center py-3">
                 <a href="https://github.com/brayanPV/"> Brayan Stiven Palomino - 1151370</a><br>
                 <a href="https://github.com/kose25/"> Carlos Jose Pablos - 1151383</a><br>
-                <a href="#"> Juan Jose - 1151370</a><br>
+                <a href="#"> Juan Jose - 1151148</a><br>
                 © 2020 Copyright
             </div>
 
