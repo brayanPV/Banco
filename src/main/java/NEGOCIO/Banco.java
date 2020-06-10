@@ -46,7 +46,7 @@ public class Banco {
     public Banco() {
     }
 
-    public boolean insertarCliente(Integer cedula, String nombre, String fechanacimiento, String dircorrespondencia, int telefono, String email) throws ParseException {
+    public boolean insertarCliente(Integer cedula, String nombre, String fechanacimiento, String dircorrespondencia, String telefono, String email) throws ParseException {
         Cliente c = new Cliente();
         c.setCedula(cedula);
         c.setNombre(nombre);
@@ -292,7 +292,7 @@ public class Banco {
         return clienteDAO.findCliente(cedula);
     }
 
-    public boolean UpdateCliente(Integer cedula, String nombre, String fechanacimiento, String dircorrespondencia, int telefono, String email) throws ParseException {
+    public boolean UpdateCliente(Integer cedula, String nombre, String fechanacimiento, String dircorrespondencia, String telefono, String email) throws ParseException {
         Cliente c = clienteDAO.findCliente(cedula);
         c.setCedula(cedula);
         c.setNombre(nombre);

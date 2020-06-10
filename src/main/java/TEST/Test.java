@@ -14,13 +14,16 @@ import java.util.List;
  * @author stive
  */
 public class Test {
-    
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         ClienteJpaController clienteDao = new ClienteJpaController();
         List<Cliente> clientes = clienteDao.findClienteEntities();
-        
-        for(Cliente c: clientes){
-            System.out.println("Cliente " + c.getNombre());
+        if (clientes != null) {
+            for (Cliente c : clientes) {
+                System.out.println("Cliente " + c.getNombre());
+            }
+        } else {
+            System.out.println("No hay clientes");
         }
     }
 }

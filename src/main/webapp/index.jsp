@@ -17,7 +17,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3">
-					<img src="images/logo.png" class="img-fluid" alt="Responsive image" alt="Lorem Ipsum Bank">
+                                    <img src="images/logo.png" class="img-fluid" alt="Responsive image" alt="Lorem Ipsum Bank">
 				</div>
 				<div class="col-lg-9 align-self-center">
 					<h1>Lorem Ipsum</h1>

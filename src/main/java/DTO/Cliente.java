@@ -64,8 +64,9 @@ public class Cliente implements Serializable {
     private String dircorrespondencia;
     @Basic(optional = false)
     @NotNull
+    @Size(min = 1, max = 10)
     @Column(name = "telefono")
-    private int telefono;
+    private String telefono;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Basic(optional = false)
     @NotNull
@@ -82,7 +83,7 @@ public class Cliente implements Serializable {
         this.cedula = cedula;
     }
 
-    public Cliente(Integer cedula, String nombre, Date fechanacimiento, String dircorrespondencia, int telefono, String email) {
+    public Cliente(Integer cedula, String nombre, Date fechanacimiento, String dircorrespondencia, String telefono, String email) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.fechanacimiento = fechanacimiento;
@@ -123,11 +124,11 @@ public class Cliente implements Serializable {
         this.dircorrespondencia = dircorrespondencia;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
