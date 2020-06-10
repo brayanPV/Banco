@@ -31,9 +31,9 @@
                 </div>
             </div>
         </header>
-
+        <jsp:include page="../../templates/navInicio.jsp"/>
         <div class="container">
-            <jsp:include page="../../templates/navInicio.jsp"/>
+
             <hr>
             <div class="row">
                 <div class="col-lg-12">
@@ -54,8 +54,8 @@
                                 </thead>
                                 <tbody>
                                     <jsp:useBean id="cDAO" class="DAO.ClienteJpaController" scope="request"></jsp:useBean>
-                                    
-                                    
+
+
                                     <c:forEach var="cliente" items="${cDAO.findClienteEntities()}">
                                         <tr>
                                             <td><c:out value="${cliente.getCedula()}"/></td>  

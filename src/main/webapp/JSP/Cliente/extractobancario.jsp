@@ -27,9 +27,9 @@
                 </div>
             </div>
         </header>
-
+        <jsp:include page="../../templates/navInicio.jsp"/>
         <div class="container">
-            <jsp:include page="../../templates/navInicio.jsp"/>
+
             <hr>
             <div class="row justify-content-center">
                 <div class="col-lg-5">
@@ -58,7 +58,7 @@
 
             </div>
         </div>
-            <jsp:include page="../../templates/footer.jsp"/> 
+        <jsp:include page="../../templates/footer.jsp"/> 
     </body>
 
 </html>

@@ -10,7 +10,7 @@
 <html lang="">
 
     <head>
-         <jsp:include page="../../templates/meta.jsp"/>
+        <jsp:include page="../../templates/meta.jsp"/>
         <title>Registrar Cliente</title>
     </head>
 
@@ -28,12 +28,12 @@
                 </div>
             </div>
         </header>
+        <nav class="navbar sticky-top navbar-light bg-light">
+            <a class="navbar-brand" href="../../index.jsp">Inicio</a>
 
+        </nav>
         <div class="container">
-            <nav class="navbar sticky-top navbar-light bg-light">
-                <a class="navbar-brand" href="../../index.jsp">Inicio</a>
 
-</nav>
             <hr>
             <div class="row justify-content-center">
                 <div class="col-lg-5">
@@ -72,13 +72,13 @@
                 </div>
 
             </div>
-            
+
         </div>
 
 
 
 
-      <jsp:include page="../../templates/footer.jsp"/> 
+        <jsp:include page="../../templates/footer.jsp"/> 
     </body>
 
 </html>
