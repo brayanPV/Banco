@@ -42,7 +42,7 @@
                     <div class="card animated fadeIn">
                         <div class="card-body">
                             <div class="card-title">Actualizar Cliente</div>
-                            <form action="actualizarCliente" name="registrar">
+                            <form action="ActualizarCliente" name="registrar">
                                 <div class="form-group">
                                     <label for="">Cedula</label>
                                     <input type="number" class="form-control" min=0 max="9999999999" placeholder="Ingrese Cedula" name="cedula" readonly value="<%= clientesito.getCedula()%>">

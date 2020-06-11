@@ -47,9 +47,9 @@ public class Extracto extends HttpServlet {
 
             Banco banquito = new Banco();
 
-            if (request.getSession().getAttribute("banquito") != null) {
-                banquito = (Banco) (request.getSession().getAttribute("banquito"));
-            }
+//            if (request.getSession().getAttribute("banquito") != null) {
+//                banquito = (Banco) (request.getSession().getAttribute("banquito"));
+//            }
             if (banquito.mostrarExtractoBancario(cedula, fechaInicio, fechaFinal) != null) {
 
                 Document documento = new Document();

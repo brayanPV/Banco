@@ -16,7 +16,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <a class="btnStyle" href="../../index.jsp"> Volver </a>
+        <a class="btnStyle" href="index.jsp"> Volver </a>
         <% int cta = (int) request.getSession().getAttribute("banquito");
             String cli = String.valueOf(cta);
             request.setAttribute("cli", cli);
