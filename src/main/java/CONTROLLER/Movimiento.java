@@ -47,7 +47,7 @@ public class Movimiento extends HttpServlet {
 
             if (tipo == 1) {
                 if (banquito.realizarConsignacion(fecha, valor, cta, tipo)) {
-                    request.getSession().setAttribute("banquito", cta);
+                    request.getSession().setAttribute("banquito", banquito);
                     request.getRequestDispatcher("./index.jsp").forward(request, response);
                 } else {
                     System.err.println("falso");
@@ -84,7 +84,7 @@ public class Movimiento extends HttpServlet {
             System.err.println(e.getMessage());
             System.out.println("el error es: " + e.getMessage());
             request.getSession().setAttribute("error", e.getMessage());
-            request.getRequestDispatcher("./JSP/Error/errorCta.jsp").forward(request, response);
+            request.getRequestDispatcher("./JSP/Error/errormovimiento.jsp").forward(request, response);
         }
     }
 
