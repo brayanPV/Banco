@@ -39,7 +39,7 @@ public class ActualizarCliente extends HttpServlet {
             String email = request.getParameter("email");
             String fecha = request.getParameter("fecha");
             Integer cedula = Integer.parseInt((request.getParameter("cedula")));
-            int telefono = Integer.parseInt(request.getParameter("telefono"));
+            String telefono = request.getParameter("telefono");
             Banco banquito = new Banco();
             if (banquito.UpdateCliente(cedula, nombre, fecha, dir, telefono, email)) {
                 request.getRequestDispatcher("./JSP/Cliente/verClientes.jsp").forward(request, response);
