@@ -45,7 +45,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3">
-                        <img src="images/logo.png" class="img-fluid" alt="Responsive image" alt="Lorem Ipsum Bank">
+                        <img src="images/logo.svg" class="img-fluid" alt="Responsive image" alt="Lorem Ipsum Bank">
                     </div>
                     <div class="col-lg-9 align-self-center">
                         <h1>Lorem Ipsum</h1>
@@ -54,13 +54,13 @@
                 </div>
             </div>
         </header>
-
+        <jsp:include page="../../templates/navInicio.jsp"/>
         <div class="container">
-            <jsp:include page="../../templates/navInicio.jsp"/>
+
             <hr>
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="card">
+                    <div class="card animated fadeIn">
                         <div class="card-body">
                             <div class="card-title">Ver Cuentas</div>
                             <table border="1" id="example" class="display">
@@ -160,7 +160,7 @@
             <div class="footer-copyright text-center py-3">
                 <a href="https://github.com/brayanPV/"> Brayan Stiven Palomino - 1151370</a><br>
                 <a href="https://github.com/kose25/"> Carlos Jose Pablos - 1151383</a><br>
-                <a href="#"> Juan Jose - 1151370</a><br>
+                <a href="#"> Juan Jose - 1151148</a><br>
                 © 2020 Copyright
             </div>
 

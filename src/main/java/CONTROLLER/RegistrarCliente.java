@@ -40,7 +40,7 @@ public class RegistrarCliente extends HttpServlet {
             String email = request.getParameter("email");
             String fecha = request.getParameter("fecha");
             String telefono = request.getParameter("telefono");
-            
+
             Banco banco = new Banco();
             //Si existe el banco, obtiene el objeto de la sesión
             if (request.getSession().getAttribute("banco") != null) {

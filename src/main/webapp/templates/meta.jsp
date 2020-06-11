@@ -6,9 +6,12 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Plataforma Web Banco Online UFPS Ingeniera de Sistemas">
+<meta name="keywords" content="Programacion, Web, Banco, Online, UFPS, Ingenieria, Sistemas">
+<meta name="author" content="Carlos Pablos, Brayan Palomino, Juan Jose Contreras">
+<link rel="icon" type="image/png" href="../images/logo.svg" />
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 <!-- Google Fonts -->

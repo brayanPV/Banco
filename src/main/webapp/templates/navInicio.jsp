@@ -6,7 +6,11 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<nav class="navbar sticky-top navbar-light bg-light">
-    <a class="navbar-brand" href="./index.jsp">Inicio</a>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark secondary-color">
+     <!-- Navbar brand -->
+            <a class="navbar-brand d-none d-xs-none d-sm-none d-md-none d-lg-block" href="./index.jsp">Banco</a>
+
+            <a class="navbar-brand d-block d-xs-none d-sm-block d-md-block d-lg-none" href="./index.jsp">
+                <img src="images/logo.svg" width="50" class="d-inline-block align-middle" alt="">Banco</a>
 
 </nav>
