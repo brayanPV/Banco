@@ -45,7 +45,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3">
-                        <img src="images/logo.png" class="img-fluid" alt="Responsive image" alt="Lorem Ipsum Bank">
+                        <img src="images/logo.svg" class="img-fluid" alt="Responsive image" alt="Lorem Ipsum Bank">
                     </div>
                     <div class="col-lg-9 align-self-center">
                         <h1>Lorem Ipsum</h1>
@@ -60,7 +60,7 @@
             <hr>
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="card">
+                    <div class="card animated fadeIn">
                         <div class="card-body">
                             <div class="card-title">Ver Cuentas</div>
                             <table border="1" id="example" class="display">

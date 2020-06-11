@@ -14,11 +14,11 @@
     </head>
 
     <body>
-        <header>
+        <header class="d-none d-lg-block">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3">
-                        <img src="images/logo.png" class="img-fluid" alt="Responsive image" alt="Lorem Ipsum Bank">
+                        <img src="images/logo.svg" class="img-fluid" alt="Responsive image" alt="Lorem Ipsum Bank">
                     </div>
                     <div class="col-lg-9 align-self-center">
                         <h1>Lorem Ipsum</h1>
@@ -27,18 +27,56 @@
                 </div>
             </div>
         </header>
-        <nav class="navbar sticky-top navbar-light bg-light">
-                <a class="navbar-brand" href="index.jsp">Inicio</a>
-                <a class="navbar-brand" href="./JSP/Cliente/registrarcliente.jsp">Registrar Cliente</a>
-                <a class="navbar-brand" href="./Redir?url=./JSP/Cuenta/registrarcuenta.jsp">Registrar Cuenta</a>
-                <a class="navbar-brand" href="./Redir?url=./JSP/Movimiento/registrarmovimiento.jsp">Registrar Movimiento</a>
-                <a class="navbar-brand" href="./Redir?url=./JSP/Cliente/verClientes.jsp">Ver Clientes</a>
-                <a class="navbar-brand" href="./Redir?url=./JSP/Cuenta/verCuentas.jsp">Ver Cuentas</a>
-                <a class="navbar-brand" href="./Redir?url=./JSP/Cliente/extractobancario.jsp">Ver Extracto</a>
-            </nav>
+        <!--Navbar-->
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark secondary-color">
+
+            <!-- Navbar brand -->
+            <a class="navbar-brand d-none d-xs-none d-sm-none d-md-none d-lg-block" href="index.jsp">Banco</a>
+
+            <a class="navbar-brand d-block d-xs-none d-sm-block d-md-block d-lg-none" href="index.jsp">
+                <img src="images/logo.svg" width="50" class="d-inline-block align-middle" alt="">Banco</a>
+
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="basicExampleNav">
+
+                <!-- Links -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link"  href="./JSP/Cliente/registrarcliente.jsp"><i class="fas fa-user-plus"></i>Registrar Clientes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Redir?url=./JSP/Cuenta/registrarcuenta.jsp"><i class="fas fa-user-plus"></i>Registrar Cuenta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Redir?url=./JSP/Movimiento/registrarmovimiento.jsp"><i class="fas fa-exchange-alt"></i>Registrar Movimiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Redir?url=./JSP/Cliente/verClientes.jsp"><i class="fas fa-users"></i>Ver Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Redir?url=./JSP/Cuenta/verCuentas.jsp"><i class="fas fa-file-invoice"></i>Ver Cuentas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Redir?url=./JSP/Cliente/extractobancario.jsp"><i class="fas fa-file-invoice-dollar"></i>Ver Extracto</a>
+                    </li>
+                </ul>
+
+                <!-- Links -->
+
+            </div>
+            <!-- Collapsible content -->
+
+        </nav>
+        <!--/.Navbar-->
 
         <div class="container">
-            
+
             <hr>
             <div class="row">
                 <div class="col-lg-4 animated fadeInUp">

@@ -11,7 +11,7 @@
 <meta name="description" content="Plataforma Web Banco Online UFPS Ingeniera de Sistemas">
 <meta name="keywords" content="Programacion, Web, Banco, Online, UFPS, Ingenieria, Sistemas">
 <meta name="author" content="Carlos Pablos, Brayan Palomino, Juan Jose Contreras">
-<link rel="icon" type="image/png" href="../images/logo.png" />
+<link rel="icon" type="image/png" href="../images/logo.svg" />
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 <!-- Google Fonts -->
