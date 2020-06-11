@@ -47,7 +47,7 @@ public class Movimiento extends HttpServlet {
 
             if (tipo == 1) {
                 if (banquito.realizarConsignacion(fecha, valor, cta, tipo)) {
-                    request.getSession().setAttribute("banquito", banquito);
+                    request.getSession().setAttribute("banquito", cta);
                     request.getRequestDispatcher("./index.jsp").forward(request, response);
                 } else {
                     System.err.println("falso");

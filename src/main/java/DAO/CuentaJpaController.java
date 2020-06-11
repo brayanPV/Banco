@@ -31,6 +31,11 @@ public class CuentaJpaController implements Serializable {
     public CuentaJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
+
+    public CuentaJpaController() {
+        this.emf = Conexion.getEm();
+    }
+
     private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
@@ -263,5 +268,5 @@ public class CuentaJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

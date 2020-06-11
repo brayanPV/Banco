@@ -4,9 +4,10 @@
     Author     : stive
 --%>
 
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="DTO.Movimiento"%>
-<%@page import="NEGOCIO.Banco"%>
+<%@ page import="DTO.Movimiento"%>
+<%@ page import="DTO.Cuenta"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,13 +16,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%
-            Banco banco = (Banco) (request.getSession().getAttribute("banquito"));
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        %>
         <a class="btnStyle" href="../../index.jsp"> Volver </a>
-
-
+        <% int cta = (int) request.getSession().getAttribute("banquito");
+            String cli = String.valueOf(cta);
+            request.setAttribute("cli", cli);
+        %>
         <table border="1" id="table_id" class="display">
             <thead>
                 <tr>
@@ -34,25 +33,35 @@
                 </tr>
             </thead>
             <tbody>
-                <% for (Movimiento mov : banco.getMovimientos()) {%>
-                <tr>
-                    <td> <%=mov.getId()%> </td>
-                    <td><%=format.format(mov.getFecha())%></td>
-                    <td> <%=mov.getValor()%></td>
-                    <td><%=mov.getNroCuenta()%></td>
-                    <td><%=mov.getIdTipoMovimiento()%></td>
-                </tr>
-                <% }%>
-            </tbody>
-        </table>
+                <jsp:useBean id="cDAO" class="DAO.CuentaJpaController" scope="request"></jsp:useBean>
+                <jsp:useBean id="mDAO" class="DAO.MovimientoJpaController" scope="request"></jsp:useBean>
+            <p><c:out value="${cta}"/></p>
+            <c:forEach var="movimiento" items="${mDAO.findMovimientoEntities()}">
+                <c:forEach var="cuenta" items="${cDAO.findCuentaEntities()}"> 
+                    <c:choose>
+                        <c:when test="${cli eq cuenta.getCedula().toString() and cuenta.getNroCuenta().toString() eq movimiento.getNroCuenta().toString()}">
+                            
+                                <tr>
+                                    <td> <c:out value="${movimiento.getId()}"/></td>
+                                    <td> <c:out value="${movimiento.getFecha()}"/></td>
+                                    <td> <c:out value="${movimiento.getValor()}"/></td>
+                                    <td> <c:out value="${movimiento.getNroCuenta().toString()}"/></td>
+                                    <td> <c:out value="${movimiento.getIdTipoMovimiento().toString()}"/></td>
+                                </tr>
+                        </c:when>
+                    </c:choose>
+                </c:forEach>
+            </c:forEach>
+        </tbody>
+    </table>
 
-        <jsp:include page="../../templates/footer.jsp"/> 
-        <script>
-            $(document).ready(function () {
-                $('#table_id').DataTable();
-            });
+    <jsp:include page="../../templates/footer.jsp"/> 
+    <script>
+        $(document).ready(function () {
+            $('#table_id').DataTable();
+        });
 
-        </script>
-    </body>
+    </script>
+</body>
 </body>
 </html>

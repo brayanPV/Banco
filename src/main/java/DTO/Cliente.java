@@ -171,7 +171,7 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "DTO.Cliente[ cedula=" + cedula + " ]";
+        return cedula.toString();
     }
     
 }

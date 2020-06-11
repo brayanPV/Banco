@@ -32,6 +32,10 @@ public class MovimientoJpaController implements Serializable {
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
+    
+    public MovimientoJpaController(){
+        this.emf = Conexion.getEm();
+    }
 
     public void create(Movimiento movimiento) {
         EntityManager em = null;

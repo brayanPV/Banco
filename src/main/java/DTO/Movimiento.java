@@ -134,7 +134,7 @@ public class Movimiento implements Serializable {
 
     @Override
     public String toString() {
-        return "DTO.Movimiento[ id=" + id + " ]";
+        return "Movimiento ID " + id;
     }
     
 }
