@@ -84,7 +84,7 @@ public class Movimiento extends HttpServlet {
             System.err.println(e.getMessage());
             System.out.println("el error es: " + e.getMessage());
             request.getSession().setAttribute("error", e.getMessage());
-            request.getRequestDispatcher("./JSP/Error/errorCta.jsp").forward(request, response);
+            request.getRequestDispatcher("./JSP/Error/errormovimiento.jsp").forward(request, response);
         }
     }
 

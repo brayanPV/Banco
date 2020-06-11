@@ -68,8 +68,8 @@ public class Extracto extends HttpServlet {
                 documento.add(par);
                 documento.close();
 
-                // request.getSession().setAttribute("banquito", banquito.mostrarExtractoBancario(cedula, fechaInicio, fechaFinal));
-                //request.getRequestDispatcher("./JSP/Cliente/extractoexitoso.jsp").forward(request, response);
+                request.getSession().setAttribute("banquito", cedula);
+                request.getRequestDispatcher("./JSP/Cliente/extractoexitoso.jsp").forward(request, response);
             } else {
                 System.err.println("falso");
                 request.getSession().setAttribute("error", "jeje hay error");

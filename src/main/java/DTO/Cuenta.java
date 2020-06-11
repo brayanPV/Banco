@@ -147,7 +147,7 @@ public class Cuenta implements Serializable {
 
     @Override
     public String toString() {
-        return "DTO.Cuenta[ nroCuenta=" + nroCuenta + " ]";
+        return nroCuenta.toString();
     }
     
 }

@@ -188,8 +188,9 @@ public class Banco {
 
                 }
             }
-            return msg;
+            //return msg;
         }
+        System.out.println(msg);
         return msg;
     }
 

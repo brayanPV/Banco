@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html lang="">
 
+
     <head>
         <title>Banco Web UFPS</title>
         <jsp:include page="templates/meta.jsp"/>
@@ -112,6 +113,7 @@
                 </div>
 
             </div>
+
         </div>
         <jsp:include page="templates/footer.jsp"/> 
     </body>
