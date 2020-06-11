@@ -41,9 +41,9 @@ public class Movimiento extends HttpServlet {
 
             Banco banquito = new Banco();
 
-            if (request.getSession().getAttribute("banquito") != null) {
-                banquito = (Banco) (request.getSession().getAttribute("banquito"));
-            }
+//            if (request.getSession().getAttribute("banquito") != null) {
+//                banquito = (Banco) (request.getSession().getAttribute("banquito"));
+//            }
 
             if (tipo == 1) {
                 if (banquito.realizarConsignacion(fecha, valor, cta, tipo)) {
