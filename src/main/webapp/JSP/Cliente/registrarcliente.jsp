@@ -6,7 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="">
 
     <head>
@@ -19,7 +18,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3">
-                        <img src="../../images/logo.svg" class="img-fluid" alt="Responsive image" alt="Lorem Ipsum Bank">
+                        <img src="../../images/logo.png" class="img-fluid" alt="Responsive image" alt="Lorem Ipsum Bank">
                     </div>
                     <div class="col-lg-9 align-self-center">
                         <h1>Lorem Ipsum</h1>
@@ -28,23 +27,24 @@
                 </div>
             </div>
         </header>
-        <nav class="navbar sticky-top navbar-expand-lg navbar-dark secondary-color">
-     <!-- Navbar brand -->
-     <a class="navbar-brand d-none d-xs-none d-sm-none d-md-none d-lg-block" href="../../index.jsp">Banco</a>
 
-            <a class="navbar-brand d-block d-xs-none d-sm-block d-md-block d-lg-none" href="../../index.jsp">
-                <img src="images/logo.svg" width="50" class="d-inline-block align-middle" alt="">Banco</a>
 
-</nav>
         <div class="container">
+            <nav class="navbar sticky-top navbar-expand-lg navbar-dark secondary-color">
+                <!-- Navbar brand -->
+                <a class="navbar-brand d-none d-xs-none d-sm-none d-md-none d-lg-block" href="../../index.jsp">Banco</a>
 
+                <a class="navbar-brand d-block d-xs-none d-sm-block d-md-block d-lg-none" href="../../index.jsp">
+                    <img src="../../images/logo.png" width="50" class="d-inline-block align-middle" alt="">Banco</a>
+
+            </nav>
             <hr>
             <div class="row justify-content-center">
                 <div class="col-lg-5">
                     <div class="card animated fadeIn">
                         <div class="card-body">
                             <div class="card-title">Registrar Cliente</div>
-                            <form action="../../RegistrarCliente" name="registrar">
+                            <form method="post" action="../../RegistrarCliente" name="registrar">
                                 <div class="form-group">
                                     <label for="">Cedula</label>
                                     <input type="number" class="form-control" min=0 max="9999999999" placeholder="Ingrese Cedula" name="cedula" required>

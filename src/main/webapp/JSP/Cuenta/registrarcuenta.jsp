@@ -9,7 +9,7 @@
 <%@page import="NEGOCIO.Banco"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!DOCTYPE html>
+
 <html lang="">
 
     <head>
@@ -22,7 +22,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3">
-                        <img src="./images/logo.svg" class="img-fluid" alt="Responsive image" alt="Lorem Ipsum Bank">
+                        <img src="images/logo.png" class="img-fluid" alt="Responsive image" alt="Lorem Ipsum Bank">
                     </div>
                     <div class="col-lg-9 align-self-center">
                         <h1>Lorem Ipsum</h1>
@@ -40,7 +40,7 @@
                     <div class="card animated fadeIn">
                         <div class="card-body">
                             <div class="card-title">Registrar Cuenta</div>
-                            <form action="RegistrarCuenta">
+                            <form action="RegistrarCuenta" method="post">
                                 <div class="form-group">
                                     <label for="">Numero de cuenta</label>
                                     <input type="number" class="form-control" min=0 max="9999999999" placeholder="Ingrese numero de cuenta" name="nrocuenta">

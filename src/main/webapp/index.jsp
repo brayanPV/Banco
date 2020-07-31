@@ -19,7 +19,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3">
-                        <img src="images/logo.svg" class="img-fluid" alt="Responsive image" alt="Lorem Ipsum Bank">
+                        <img src="images/logo.png" class="img-fluid" alt="Responsive image" alt="Lorem Ipsum Bank">
                     </div>
                     <div class="col-lg-9 align-self-center">
                         <h1>Lorem Ipsum</h1>
@@ -28,7 +28,15 @@
                 </div>
             </div>
         </header>
-        <!--Navbar-->
+        
+        
+        
+       
+
+        <div class="container">
+
+            
+             <!--Navbar-->
         <nav class="navbar sticky-top navbar-expand-lg navbar-dark secondary-color">
 
             <!-- Navbar brand -->
@@ -75,9 +83,7 @@
 
         </nav>
         <!--/.Navbar-->
-
-        <div class="container">
-
+            
             <hr>
             <div class="row">
                 <div class="col-lg-4 animated fadeInUp">

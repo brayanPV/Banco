@@ -32,35 +32,7 @@ public class RegistrarCuenta extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try {
-            Integer nroCuenta = Integer.parseInt(request.getParameter("nrocuenta"));
-            int t = Integer.parseInt(request.getParameter("tipocuenta"));            
-            Integer cedula = Integer.parseInt(request.getParameter("cedula"));
-            
-            //Banco banco = (Banco) (request.getSession().getAttribute("banco"));
-            Banco banquito = new Banco();
-            
-            if (request.getSession().getAttribute("banquito") != null) {
-                banquito = (Banco) (request.getSession().getAttribute("banquito"));
-            }
-            
-            if (banquito.insertarCuenta(nroCuenta, cedula, t)) {
-                request.getSession().setAttribute("banquito", banquito);
-                request.getRequestDispatcher("./index.jsp").forward(request, response);
-            }
-            else {
-                System.err.println("falso");
-                request.getSession().setAttribute("error", "Dato ya registrado en el sistema");
-                request.getRequestDispatcher("./JSP/Error/errorCta.jsp").forward(request, response);
-            }
-            
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-            System.out.println("el error es: "+e.getMessage());
-            request.getSession().setAttribute("error", e.getMessage());
-            request.getRequestDispatcher("./JSP/Error/errorCta.jsp").forward(request, response);
-        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -90,6 +62,34 @@ public class RegistrarCuenta extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        try {
+            Integer nroCuenta = Integer.parseInt(request.getParameter("nrocuenta"));
+            int t = Integer.parseInt(request.getParameter("tipocuenta"));
+            Integer cedula = Integer.parseInt(request.getParameter("cedula"));
+
+            //Banco banco = (Banco) (request.getSession().getAttribute("banco"));
+            Banco banquito = new Banco();
+
+            if (request.getSession().getAttribute("banquito") != null) {
+                banquito = (Banco) (request.getSession().getAttribute("banquito"));
+            }
+
+            if (banquito.insertarCuenta(nroCuenta, cedula, t)) {
+                request.getSession().setAttribute("banquito", banquito);
+                request.getRequestDispatcher("./index.jsp").forward(request, response);
+            } else {
+                System.err.println("falso");
+                request.getSession().setAttribute("error", "Dato ya registrado en el sistema");
+                request.getRequestDispatcher("./JSP/Error/errorCta.jsp").forward(request, response);
+            }
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            System.out.println("el error es: " + e.getMessage());
+            request.getSession().setAttribute("error", e.getMessage());
+            request.getRequestDispatcher("./JSP/Error/errorCta.jsp").forward(request, response);
+        }
     }
 
     /**
